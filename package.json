@@ -1,0 +1,15 @@
+{
+  "name": "pokenum",
+  "description": "Generates a page for pokemon numbers.",
+  "keywords": ["pokemon"],
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fent/pokenum.git"
+  },
+  "author": "Roly Fentanes (https://github.com/fent)",
+  "dependencies": {
+    "dustjs-linkedin": "~2.0.2"
+  },
+  "private": true
+}

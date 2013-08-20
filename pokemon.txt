@@ -1,0 +1,110 @@
+0,egg
+1,pokeflute
+2,crane
+3,cat
+4,sailboat
+5,fisherman
+6,bob-omb
+7,boomerang
+8,snowman
+9,balloon
+00,missingno,multiply master balls
+01,bulbasaur,vine whip
+02,ivysaur,razor leaf
+03,venusaur,solar beam
+04,charmander,ember
+05,charmeleon,rage
+06,charizard,seismic toss
+07,squirtle,water gun
+08,wartortle,bubblebeam
+09,blastoise,hydro pump
+10,caterpie,string shot
+11,metapod,harden (shiny)
+12,butterfree,sleep power
+13,weedle,poison sting
+14,kakuna,harden (hanging on branch)
+15,beedrill,fury attack
+16,pidgey,sand attack
+17,pidgeotto,gust
+18,pidgeot,wing attack
+19,rattata,tackle
+20,raticate,super fang
+21,spearow,peck
+22,fearow,drill peck
+23,ekans,wrap
+24,arbok,glare
+25,pikachu,thunder
+26,raichu,thunderbolt
+27,sandshrew,dig
+28,sandslash,slash
+29,nidoran&#9792;,screech
+30,nidorina,ice beam
+31,nidoqueen,substitute
+32,nidoran&#9794;,double kick
+33,nidorino,toxic spikes
+34,nidoking,hyper beam
+35,clefairy,metronome
+36,clefable,body slam
+37,vulpix,fire spin
+38,ninetails,fire spin
+39,jigglypuff,sing
+40,wigglytuff,double slap
+41,zubat,supersonic
+42,golbat,bite
+43,oddish,sweet scent
+44,gloom,protect
+45,vileplume,petal dance
+46,paras,stun spore
+47,parasect,leech life
+48,venonat,giga drain
+49,venomoth,confusion
+50,digglet,earthquake
+51,dugtrio,mud slap
+52,meowth,scratch
+53,persian,payday
+54,psyduck,light screen
+55,golduck,water pulse
+56,mankey,swagger
+57,primeape,trash
+58,growlithe,growl
+59,arcanine,extreme speed
+60,poliwag,wake-up slap
+61,poliwhirl,thief
+62,poliwrath,blizzard
+63,abra,teleport
+64,kadabra,psybeam
+65,alakazam,psychic
+66,machop,karate chop
+67,machoke,rock tomb
+68,machamp,frustration
+69,bellsprout,swords dance
+70,weepinbell,energy ball
+71,vitctreebel,giga drain
+72,tentacool,scald
+73,tentacruel,constrict
+74,geodude,flamethrower
+75,graveler,explosion
+76,golem,rollout
+77,ponyta,return
+78,rapidash,flame charge
+79,slowpoke,yawn
+80,slowbro,headbutt
+81,magnemite,swift
+82,magneton,thunder wave
+83,farfetch'd,cut
+84,doduo,aerial ace
+85,dodrio,fly
+86,seel,tail whip
+87,dewgong,hail
+88,grimer,poison gas
+89,muk,toxic
+90,shellder,payback
+91,cloyster,clamp
+92,gastly,lick
+93,haunter,fling
+94,gengar,confuse ray
+95,onyx,rock throw
+96,drowzee,low sweep
+97,hypno,hypnosis
+98,krabby,x-scissor
+99,kingler,guillotine
