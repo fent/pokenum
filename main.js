@@ -1,5 +1,6 @@
 /*global dust, pokemon */
 var tmpl =  '' +
+  '<table>' +
   '  {#rows}' +
   '  <tr>' +
   '    {#pokemon}' +
@@ -42,5 +43,18 @@ dust.render('body', data, function(err, output) {
   if (err) throw err;
   $(function() {
     $('body').html(output);
+    for (var i = 0; i < 7; i++) {
+      var s = $('.weeknum-' + i);
+      selectionHover(s);
+    }
   });
 });
+
+
+function selectionHover(s) {
+  s.hover(function() {
+    s.addClass('hi');
+  }, function() {
+    s.removeClass('hi');
+  });
+}
