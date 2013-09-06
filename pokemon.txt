@@ -56,7 +56,7 @@
 45,vileplume,petal dance
 46,paras,stun spore
 47,parasect,leech life
-48,venonat,giga drain
+48,venonat,foresight
 49,venomoth,confusion
 50,digglet,earthquake
 51,dugtrio,mud slap
