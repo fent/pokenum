@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>pokenum</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <table>
-      {#rows}
-      <tr>
-        {#pokemon}
-        <td>
-          <div class="number">{number}</div>
-          <div class="name">{name|s}</div>
-          <img src="{url}" alt="{number}" />
-          {#move}<div class="move">{.}</div>{/move}
-        </td>
-        {/pokemon}
-      </tr>
-      {/rows}
-    </table>
-  </body>
-</html>
+<table>
+  {#rows}
+  <tr>
+    {#pokemon}
+    <td>
+      <div class="number">{number}</div>
+      <div class="name">{name|s}</div>
+      <img src="{url}" alt="{number}" />
+      {#move}<div class="move">{.}</div>{/move}
+    </td>
+    {/pokemon}
+  </tr>
+  {/rows}
+</table>
