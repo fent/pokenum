@@ -14,17 +14,20 @@ td {
   border: 3px dashed #bbb;
   padding: 3px 3px 0 3px;
   width: 94px;
-  height: 94;
+  height: calc(94px + 20pt);
   z-index: -2;
 }
 
 .number, .move {
-  text-shadow: 2px 2px 3px #bbb;
+  color: #333;
+  text-shadow: 1px 1px 0 #bbb, -1px -1px 0 #bbb, 1px -1px 0 #bbb, -1px 1px 0 #bbb;
 }
 
 .number {
+  position: absolute;
+  top: 0;
+  left: 3px;;
   font-family: Impact;
-  color: #333;
   position: absolute;
   font-size: 20pt;
 }
@@ -32,23 +35,26 @@ td {
 img {
   height: 96px;
   max-width: 96px;
-  float: right;
   z-index: -1;
 }
 
 .name {
+  position: absolute;
+  top: 0;
+  right: 3px;
   font-size: 12pt;
   color: white;
   text-shadow: 1px 1px 2px #333, -1px -1px 2px #333, 1px -1px 2px #333, -1px 1px 2px #333;
-  float: right;
   height: 20px;
-  margin-bottom: -20px;
 }
 
 .move {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   font-size: 10pt;
-  clear: both;
-  margin-top: -10pt;
+  width: 100%;
+  text-align: center;
 }
 
 .weeknum-0 {
