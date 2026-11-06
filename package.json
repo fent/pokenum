@@ -1,15 +1,24 @@
 {
   "name": "pokenum",
-  "description": "Generates a page for pokemon numbers.",
-  "keywords": ["pokemon"],
-  "version": "0.1.0",
+  "description": "A way to remember numbers using Pokémon.",
+  "keywords": [
+    "pokemon",
+    "memory"
+  ],
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "homepage": "https://fent.github.io/pokenum/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fent/pokenum.git"
+    "url": "https://github.com/fent/pokenum.git"
   },
   "author": "fent (https://github.com/fent)",
-  "dependencies": {
-    "dustjs-linkedin": "~2.0.2"
+  "engines": {
+    "node": ">=18"
   },
-  "private": true
+  "scripts": {
+    "build": "node build.js",
+    "start": "python3 -m http.server 8000"
+  }
 }
