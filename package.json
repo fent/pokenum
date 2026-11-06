@@ -9,7 +9,7 @@
   },
   "author": "Roly Fentanes (https://github.com/fent)",
   "dependencies": {
-    "dustjs-linkedin": "~2.0.2"
+    "dustjs-linkedin": "~3.0.1"
   },
   "private": true
 }
