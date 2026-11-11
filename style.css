@@ -7,6 +7,8 @@
   --border: #c9c9c2;
   --highlight: #b45309;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+  --single-bg: #e8e7e0;
+  --single-fg: #17181a;
 
   --week-0-bg: #111827;
   --week-0-fg: #f9fafb;
@@ -32,6 +34,8 @@
     --border: #2a2d33;
     --highlight: #fbbf24;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.5);
+    --single-bg: #1b1f24;
+    --single-fg: #f3f4f6;
   }
 }
 
@@ -78,12 +82,6 @@ h1 {
   margin: 0;
   color: var(--muted);
   font-size: clamp(1rem, 1.5vw, 1.125rem);
-}
-
-.hint {
-  margin: 0.9rem 0 0;
-  color: var(--muted);
-  font-size: 0.85rem;
 }
 
 .legend {
@@ -142,6 +140,12 @@ main {
   text-align: center;
 }
 
+.card--single {
+  --week-bg: var(--single-bg);
+  --week-fg: var(--single-fg);
+  border-style: dashed;
+}
+
 .week-0 {
   --week-bg: var(--week-0-bg);
   --week-fg: var(--week-0-fg);
@@ -190,9 +194,19 @@ main {
   opacity: 0.85;
 }
 
-.card img {
+.art {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
   width: min(64%, 4.5rem);
-  height: auto;
+  aspect-ratio: 1;
+}
+
+.art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   image-rendering: pixelated;
 }
 
@@ -212,6 +226,136 @@ main {
   font-size: 0.6rem;
   line-height: 1.1;
   opacity: 0.9;
+}
+
+.guide {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.guide-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+}
+
+.guide h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.guide .legend {
+  margin-top: 0.75rem;
+}
+
+.guide ol {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.guide > ol > li + li {
+  margin-top: 0.75rem;
+}
+
+.guide .note {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.tip {
+  position: relative;
+  display: inline-flex;
+}
+
+.tip-trigger {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  cursor: help;
+}
+
+.tip-trigger:hover,
+.tip-trigger:focus-visible {
+  color: var(--text);
+}
+
+.tip-content {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  z-index: 20;
+  display: none;
+  width: min(90vw, 34rem);
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.tip:hover .tip-content,
+.tip:focus-within .tip-content {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .tip-content {
+    position: fixed;
+    top: auto;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: auto;
+    max-width: none;
+    max-height: 50vh;
+    overflow: auto;
+  }
+}
+
+.month-codes-wrap {
+  margin-top: 0.75rem;
+  overflow-x: auto;
+}
+
+.month-codes {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  color: var(--text);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.month-codes caption {
+  margin-bottom: 0.35rem;
+  color: var(--text);
+  font-weight: 700;
+  text-align: left;
+}
+
+.month-codes th,
+.month-codes td {
+  padding: 0.35rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.month-codes th:first-child,
+.month-codes td:first-child {
+  text-align: left;
+  font-weight: 700;
 }
 
 @media (hover: hover) {
@@ -309,7 +453,11 @@ a:hover {
     max-width: none;
   }
 
-  .hint,
+  .guide {
+    break-inside: avoid;
+  }
+
+  .tip,
   footer {
     display: none;
   }
@@ -321,6 +469,14 @@ a:hover {
   .grid {
     grid-template-columns: repeat(10, 1fr);
     gap: 2px;
+  }
+
+  .month-codes-wrap {
+    overflow: visible;
+  }
+
+  .month-codes {
+    min-width: 0;
   }
 
   .card {

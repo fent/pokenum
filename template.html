@@ -15,17 +15,78 @@
     <p class="eyebrow">pokenum</p>
     <h1>Remember numbers with Pokémon</h1>
     <p class="lede">Break a number into pairs, then turn each pair into a Pokémon or a move, alternating between the two. Link each image to the next to build a scene you can recall.</p>
-    <p class="hint">Cards with the same color belong to the same learning group; hover one to highlight the rest.</p>
-    <ul class="legend" aria-label="Learning groups">
-      <li><span class="swatch week-0"></span>Group 1</li>
-      <li><span class="swatch week-1"></span>Group 2</li>
-      <li><span class="swatch week-2"></span>Group 3</li>
-      <li><span class="swatch week-3"></span>Group 4</li>
-      <li><span class="swatch week-4"></span>Group 5</li>
-      <li><span class="swatch week-5"></span>Group 6</li>
-      <li><span class="swatch week-6"></span>Group 7</li>
-    </ul>
   </header>
+
+  <section class="guide" aria-labelledby="guide-title">
+    <div class="guide-head">
+      <h2 id="guide-title">Weekday quick guide</h2>
+      <span class="tip">
+        <button type="button" class="tip-trigger" aria-describedby="guide-tip">How it works</button>
+        <span class="tip-content" id="guide-tip" role="tooltip">
+          The card group is the year code: for card NN it is the weekday of March 4 in 19NN. Add the month code and the day of the month, then take the total modulo 7: 0 = Sunday, 6 = Saturday. January and February use the leap-year value in leap years. For 2000, add the century correction +6. Example: July 4, 1976: card 76 group 4 + July 6 + 4 = 14 → Sunday. December 31, 1999: card 99 group 4 + December 5 + 31 = 40 → Friday.
+        </span>
+      </span>
+    </div>
+    <ol>
+      <li>
+        Find the card for year <code>19NN</code> and note its weekday group.
+        <ul class="legend" aria-label="Weekday colors">
+          <li><span class="swatch week-0"></span>Sunday</li>
+          <li><span class="swatch week-1"></span>Monday</li>
+          <li><span class="swatch week-2"></span>Tuesday</li>
+          <li><span class="swatch week-3"></span>Wednesday</li>
+          <li><span class="swatch week-4"></span>Thursday</li>
+          <li><span class="swatch week-5"></span>Friday</li>
+          <li><span class="swatch week-6"></span>Saturday</li>
+        </ul>
+        <p class="note">The 0–9 cards are single-digit entries; the colors apply to the 00–99 year cards.</p>
+        <p class="note">For 2000, add 6 to the <code>00</code> year code. <span class="tip"><button type="button" class="tip-trigger" aria-describedby="why-2000">Why?</button><span class="tip-content" id="why-2000" role="tooltip">1900-03-04 to 2000-03-04 is 100 years plus 25 leap days = 36,525 days. 36,525 mod 7 = 6, so 2000's year code is 6 (Saturday) instead of 1900's 0 (Sunday).</span></span></p>
+      </li>
+      <li>
+        Add the month code and the day of the month.
+        <div class="month-codes-wrap">
+          <table class="month-codes">
+            <caption>Month codes (Jan/Feb: normal/leap)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Month</th>
+                <th scope="col">Jan</th>
+                <th scope="col">Feb</th>
+                <th scope="col">Mar</th>
+                <th scope="col">Apr</th>
+                <th scope="col">May</th>
+                <th scope="col">Jun</th>
+                <th scope="col">Jul</th>
+                <th scope="col">Aug</th>
+                <th scope="col">Sep</th>
+                <th scope="col">Oct</th>
+                <th scope="col">Nov</th>
+                <th scope="col">Dec</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Code</th>
+                <td>0/6</td>
+                <td>3/2</td>
+                <td>3</td>
+                <td>6</td>
+                <td>1</td>
+                <td>4</td>
+                <td>6</td>
+                <td>2</td>
+                <td>5</td>
+                <td>0</td>
+                <td>3</td>
+                <td>5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </li>
+      <li>Take the total modulo 7. 0 = Sunday … 6 = Saturday.</li>
+    </ol>
+  </section>
 
   <main>
     <ul class="grid" aria-label="Pokémon number reference">

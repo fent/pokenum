@@ -4,6 +4,11 @@ import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
 
+const pngSize = (file) => {
+  const buffer = readFileSync(file);
+  return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+};
+
 const numbers = [
   ...Array.from({ length: 10 }, (_, i) => String(i)),
   ...Array.from({ length: 100 }, (_, i) => String(i).padStart(2, '0')),
@@ -21,11 +26,22 @@ for (const number of numbers) {
     continue;
   }
   if (!entry.name) errors.push(`"${number}" has no name`);
-  if (!Number.isInteger(entry.week) || entry.week < 0 || entry.week > 6) {
-    errors.push(`"${number}" has an invalid week: ${entry.week}`);
-  }
-  if (number.length === 2 && !entry.move) {
-    errors.push(`"${number}" has no move`);
+  if (number.length === 2) {
+    if (!Number.isInteger(entry.week) || entry.week < 0 || entry.week > 6) {
+      errors.push(`"${number}" has an invalid weekday: ${entry.week}`);
+    } else {
+      // Pair cards encode O'Brien's Human Calendar year code for 1900 + NN,
+      // equivalent to the weekday of March 4 in that year.
+      const expected = new Date(Date.UTC(1900 + Number(number), 2, 4)).getUTCDay();
+      if (entry.week !== expected) {
+        errors.push(
+          `"${number}" has weekday ${entry.week}, expected ${expected} (March 4, ${1900 + Number(number)})`,
+        );
+      }
+    }
+    if (!entry.move) {
+      errors.push(`"${number}" has no move`);
+    }
   }
   if (!existsSync(join(root, 'img', `${number}.png`))) {
     errors.push(`missing image: img/${number}.png`);
@@ -53,13 +69,17 @@ const escapeHtml = (value) =>
 const cards = numbers
   .map((number) => {
     const { name, move, week } = data[number];
+    const cardClass = number.length === 2 ? `card week-${week}` : 'card card--single';
+    const size = pngSize(join(root, 'img', `${number}.png`));
     const moveHtml = move
       ? `\n        <span class="move">${escapeHtml(move)}</span>`
-      : '';
+      : number.length === 1
+        ? `\n        <span class="move" aria-hidden="true">&nbsp;</span>`
+        : '';
 
-    return `      <li class="card week-${week}">
+    return `      <li class="${cardClass}">
         <span class="number">${number}</span>
-        <img src="img/${number}.png" alt="" width="96" height="96" loading="lazy" decoding="async">
+        <span class="art"><img src="img/${number}.png" alt="" width="${size.width}" height="${size.height}" loading="lazy" decoding="async"></span>
         <span class="name">${escapeHtml(name)}</span>${moveHtml}
       </li>`;
   })
