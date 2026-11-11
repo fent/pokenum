@@ -1,43 +1,33 @@
 {
   "0": {
-    "name": "egg",
-    "week": 0
+    "name": "egg"
   },
   "1": {
-    "name": "pokeflute",
-    "week": 1
+    "name": "pokeflute"
   },
   "2": {
-    "name": "crane",
-    "week": 2
+    "name": "bicycle"
   },
   "3": {
-    "name": "cat",
-    "week": 3
+    "name": "poke doll"
   },
   "4": {
-    "name": "sailboat",
-    "week": 4
+    "name": "s.s. anne"
   },
   "5": {
-    "name": "fisherman",
-    "week": 5
+    "name": "hiker"
   },
   "6": {
-    "name": "bob-omb",
-    "week": 6
+    "name": "helix fossil"
   },
   "7": {
-    "name": "boomerang",
-    "week": 0
+    "name": "thick club"
   },
   "8": {
-    "name": "snowman",
-    "week": 1
+    "name": "escape rope"
   },
   "9": {
-    "name": "balloon",
-    "week": 2
+    "name": "air balloon"
   },
   "00": {
     "name": "missingno",
