@@ -1,8 +1,8 @@
 # pokenum
 
-A way to remember numbers using Pokémon.
+A way to remember numbers using Pokemon.
 
-If you're a fan of Pokémon and would like to use them to remember numbers, consider using this method.
+If you're a fan of Pokemon and would like to use them to remember numbers, consider using this method.
 
 ### Usage
 
