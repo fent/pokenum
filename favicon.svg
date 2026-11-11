@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="0.5" y="0.5" width="31" height="31" rx="6" fill="#17181a"/>
+  <circle cx="16" cy="16" r="11.4" fill="#f7f7f5"/>
+  <circle cx="16" cy="16" r="11" fill="#f7f7f5"/>
+  <clipPath id="ball"><circle cx="16" cy="16" r="11"/></clipPath>
+  <clipPath id="top"><rect x="5" y="5" width="22" height="10.2"/></clipPath>
+  <g clip-path="url(#ball)">
+    <g clip-path="url(#top)">
+      <rect x="5" y="5" width="3.15" height="11" fill="#111827"/>
+      <rect x="8.15" y="5" width="3.15" height="11" fill="#1f2937"/>
+      <rect x="11.3" y="5" width="3.15" height="11" fill="#374151"/>
+      <rect x="14.45" y="5" width="3.15" height="11" fill="#4b5563"/>
+      <rect x="17.6" y="5" width="3.15" height="11" fill="#9ca3af"/>
+      <rect x="20.75" y="5" width="3.15" height="11" fill="#d1d5db"/>
+      <rect x="23.9" y="5" width="3.15" height="11" fill="#f3f4f6"/>
+    </g>
+    <rect x="5" y="15.2" width="22" height="1.7" fill="#17181a"/>
+  </g>
+  <circle cx="16" cy="16" r="5" fill="#17181a"/>
+  <circle cx="16" cy="16" r="4.2" fill="#f7f7f5"/>
+  <path d="M13.2 13.2 H18.8 V14.6 L14.9 19.2 H13.1 L17.1 14.6 H13.2 Z" fill="#17181a"/>
+</svg>
