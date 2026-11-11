@@ -65,3 +65,9 @@ npm start       # serve the page at http://localhost:8000
 ```
 
 `index.html` is fully pre-rendered, so you can also open it directly in a browser without a server. It is generated from `template.html` and `pokemon.json`, so edit those and then run `npm run build`.
+
+## Credits
+
+Pokemon sprites are sourced from [Veekun](https://veekun.com/), [PokeAPI sprites](https://github.com/PokeAPI/sprites), [pret/pokefirered](https://github.com/pret/pokefirered), and [pret/pokeemerald](https://github.com/pret/pokeemerald).
+
+Pokemon is a trademark of Nintendo, Creatures Inc., and GAME FREAK inc. This is an unofficial fan project and is not affiliated with or endorsed by them.
